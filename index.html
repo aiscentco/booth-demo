@@ -205,6 +205,8 @@ html[lang=sv] .hl .l0{font-size:31cqw}
 
 /* language, prize list, shade picker, founder card */
 .topr{display:flex;align-items:center;gap:10px}
+.topbar{position:relative;z-index:20}
+.lang button{position:relative;z-index:21}
 .lang{display:flex;border:1px solid rgba(176,138,60,.5);background:rgba(255,255,255,.6)}
 .lang button{border:0;background:none;padding:5px 9px;font-size:10px;letter-spacing:.18em;cursor:pointer;color:var(--muted)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#F1DFB0}
@@ -525,7 +527,7 @@ html[lang=sv] .hl .l0{font-size:31cqw}
        <span class="payoff" data-t="s4pay">Your code appears on the next screen</span>
        <label class="field" for="email"><span data-t="emailLbl">Email</span>
          <input type="email" id="email" placeholder="you@example.com" autocomplete="email"></label>
-       <label class="check"><input type="checkbox" id="consent"><span data-t="consent">I agree that SISÓNE may email me my code and, if I win, contact me about the prize. <span class="tiny">(Terms and privacy policy link goes here.)</span></span></label>
+       <label class="check"><input type="checkbox" id="consent"><span data-t="consent">I agree that SISÓNE may email me my code and, if I win, contact me about the prize. <span class="tiny">Terms and privacy policy link goes here.</span></span></label>
      </div>
 
      <p class="err" id="err" role="alert"></p>
@@ -701,7 +703,7 @@ html[lang=sv] .hl .l0{font-size:31cqw}
     s3h:'Share your <b>Story</b>',s3pay:'Share the glow',s3p:'We made your Story for you. @sisonebeauty, your friend and <span class="hashtag">#longevityskincare</span> are already on it.',friendLbl:"Your friend's Instagram handle",shareBtn:'Share to Story',saveBtn:'Save image',copyTags:'Copy tags',
     storyMsg:'Choose Instagram, then Story. Add the @sisonebeauty mention sticker so we see it.',posted:'I posted my Story with the tags',
     s4h:'Enter your email to <b>unlock your code</b>',s4pay:'Your code appears on the next screen',shadeLbl:'Your BB Cream shade',shLight:'Light',shMedium:'Medium',shDark:'Dark',emailLbl:'Email',
-    consent:'I agree that SISÓNE may email me about the draw and, if I win, contact me about the prize. <span class="tiny">(Terms and privacy policy link goes here.)</span>',
+    consent:'I agree that SISÓNE may email me about the draw and, if I win, contact me about the prize. <span class="tiny">Terms and privacy policy link goes here.</span>',
     back:'Back',next:'Next',get:'Get my code',pl:'Step {n} of 4 · {label}',lab1:'pick your shade, then follow',lab2:'nearly in the draw',lab3:'one Story to go',lab4:'last step, then your code',
     e1a:'Tap Open Instagram first and follow @sisonebeauty.',e1b:'Follow @sisonebeauty, then tick the box.',e2:'Add your photo to continue.',e3a:"Add your friend's Instagram handle, like @friend.",e3b:'Post your Story, then tick the box.',
     e4a:'Choose your BB Cream shade.',e4b:'Enter a valid email address.',e4c:'Please accept the terms so we can send your code.',eFail:'Something went wrong. Please try again.',eFile:'That file could not be read. Try another photo.',
@@ -721,18 +723,18 @@ html[lang=sv] .hl .l0{font-size:31cqw}
     cat_cleanse:'Rengör',cat_exf:'Exfoliera',cat_mask:'Mask',cat_serum:'Serum',cat_day:'Dag',cat_night:'Natt',cat_bb:'Färg · SPF 30',
     pzShade:'Välj nyans på din BB Cream: Light, Medium eller Dark.',heroVal:'Sju fullstora produkter. <b>Värde 5 093 kr.</b>',bandVal:'Vinn <b>7 fullstora produkter</b>, värde <b>5 093 kr</b>',
     featEb:'Börja här',featP:'NAD⁺, NMN, 24K guld och hyaluronsyra i en och samma glow. Ditt prov väntar. Delta nedan och spara 20% till din nästa beställning.',
-    howEb:'Så funkar det',howH:'Tre tryck. <b>En glow.</b>',how1b:'Följ oss',how1s:'Låser upp din 20%-kod',how2b:'Fånga din glow',how2s:'Du är med i dragningen',how3b:'Dela din Story',how3s:'Din vän är taggad åt dig',
+    howEb:'Så funkar det',howH:'Tre steg till <b>ditt glow.</b>',how1b:'Följ oss',how1s:'Låser upp din 20%-kod',how2b:'Visa ditt glow',how2s:'Du är med i dragningen',how3b:'Dela din Story',how3s:'Din vän är taggad åt dig',
     s1h:'Välj din <b>nyans</b>',s1pay0:'Din BB Cream ingår i vinsten',s1fh:'Följ sedan <b>@sisonebeauty</b>',setName:'Hela kollektionen',cat_all:'Sju fullstora produkter',cat_pair:'Rengör och exfoliera',s1pay:'Låser upp din 20%-kod',s1p:'Tryck på knappen. Instagram öppnas på SISÓNE:s profil. Följ och svep sedan tillbaka hit.',igBtn:'Öppna Instagram',follow:'Jag följer @sisonebeauty',followed:'Jag följde @sisonebeauty',
-    s2h:'Fånga din <b>glow</b>',s2pay:'Du är med i dragningen',s2p:'Ta ett nytt foto eller välj ett från ditt bibliotek. Du lägger upp det i nästa steg.',pvEmpty:'Ditt foto visas här',cam:'Ta ett foto',lib:'Välj från bibliotek',
+    s2h:'Visa ditt <b>glow</b>',s2pay:'Du är med i dragningen',s2p:'Ta ett nytt foto eller välj ett från ditt bibliotek. Du lägger upp det i nästa steg.',pvEmpty:'Ditt foto visas här',cam:'Ta ett foto',lib:'Välj från bibliotek',
     s3h:'Dela din <b>Story</b>',s3pay:'Dela glowen',s3p:'Vi har gjort din Story åt dig. @sisonebeauty, din vän och <span class="hashtag">#longevityskincare</span> ligger redan på den.',friendLbl:'Din väns Instagram-namn',shareBtn:'Dela till Story',saveBtn:'Spara bild',copyTags:'Kopiera taggar',
     storyMsg:'Välj Instagram och sedan Story. Lägg till @sisonebeauty-klistermärket så att vi ser den.',posted:'Jag har lagt upp min Story med taggarna',
     s4h:'Ange din e-post för att <b>låsa upp din kod</b>',s4pay:'Din kod visas på nästa skärm',shadeLbl:'Din BB Cream-nyans',shLight:'Light',shMedium:'Medium',shDark:'Dark',emailLbl:'E-post',
-    consent:'Jag godkänner att SISÓNE mejlar mig om dragningen och, om jag vinner, kontaktar mig om priset. <span class="tiny">(Länk till villkor och integritetspolicy läggs in här.)</span>',
+    consent:'Jag godkänner att SISÓNE mejlar mig om dragningen och, om jag vinner, kontaktar mig om priset. <span class="tiny">Länk till villkor och integritetspolicy läggs in här.</span>',
     back:'Tillbaka',next:'Nästa',get:'Hämta min kod',pl:'Steg {n} av 4 · {label}',lab1:'välj nyans, följ sedan',lab2:'nästan med i dragningen',lab3:'en Story kvar',lab4:'sista steget, sedan din kod',
     e1a:'Tryck på Öppna Instagram först och följ @sisonebeauty.',e1b:'Följ @sisonebeauty och kryssa sedan i rutan.',e2:'Lägg till ditt foto för att gå vidare.',e3a:'Lägg till din väns Instagram-namn, till exempel @vän.',e3b:'Lägg upp din Story och kryssa sedan i rutan.',
     e4a:'Välj nyans på din BB Cream.',e4b:'Ange en giltig e-postadress.',e4c:'Godkänn villkoren så att vi kan skicka din kod.',eFail:'Något gick fel. Försök igen.',eFile:'Filen gick inte att läsa. Prova ett annat foto.',
-    aEb:'Möt grundaren',aTitle:'Grundare och VD · SISÓNE BEAUTY',aQ:'Frågor om kollektionen, ett samarbete eller ett samtal om hud? Hör av dig.',aCall:'Ring',aMail:'Mejla',aIg:'Instagram',aWeb:'Hemsida',aBook:'Boka möte',aSave:'Spara kontakt',aSub:'Mötesförfrågan från SISÓNE-montern',
-    foot:'Longevity-hudvård från Stockholm',pw:'Drivs av '+'<span class="wm">AIscent <i>Co.</i></span>',
+    aEb:'Möt grundaren',aTitle:'Grundare och VD · SISÓNE BEAUTY',aQ:'Frågor om kollektionen, ett samarbete eller bara prata hudvård? Hör av dig.',aCall:'Ring',aMail:'Mejla',aIg:'Instagram',aWeb:'Hemsida',aBook:'Boka möte',aSave:'Spara kontakt',aSub:'Mötesförfrågan från SISÓNE-montern',
+    foot:'Longevity-hudvård från Stockholm',pw:'Skapat av '+'<span class="wm">AIscent <i>Co.</i></span>',
     sEb:'Du är med i dragningen',sH:'Tack, <b>vackra</b>',sP:'Din kod för 20% rabatt på ditt nästa köp finns nedan. Håll utkik på @sisonebeauty för att se vem som vinner SISÓNE BEAUTY Longevity Collection.',
     copyCode:'Kopiera kod',shop:'Handla SISÓNE',sNote:'Förhandsnotering: den här anmälan hamnade i monterskärmens dragning.',
     shadeOut:'Din BB Cream-nyans: {s}',saved:'Sparad. Om inget laddades ned, tryck och håll på din Story och välj Spara. Lägg sedan upp den i Instagram.',
@@ -834,7 +836,7 @@ html[lang=sv] .hl .l0{font-size:31cqw}
   $('t-booth').onclick=function(){show('booth')};
   $('simTap').onclick=function(){resetWizard();show('guest')};
   /* ?view=guest is the page a sample's NFC sticker opens; ?view=booth is the booth screen */
-  var view=qs.get('view');
+  var view=qs.get('view')||'guest'; /* no parameter: straight to the landing page. ?view=demo shows the tabbed demo */
   $('start').onclick=function(){
     var w=$('wiz');
     try{w.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}catch(e){w.scrollIntoView()}
