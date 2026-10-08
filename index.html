@@ -87,6 +87,12 @@ main{max-width:1100px;margin:0 auto}
 .btn.sheen::after{content:"";position:absolute;inset:0;width:40%;background:linear-gradient(100deg,transparent,rgba(214,176,92,.28),transparent);animation:sheen 3.6s ease-in-out infinite}
 .btn[disabled]{opacity:.45;cursor:default}
 .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.guide{margin:14px 0 6px;padding:16px 14px;border:1px solid var(--gold);background:rgba(255,255,255,.7);display:grid;gap:12px}
+.guide .gh{font-weight:800;font-size:15px;letter-spacing:.03em}
+.guide ol{list-style:none;display:grid;gap:12px;padding:0}
+.guide li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.35}
+.guide li>i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#F1DFB0;font-style:normal;font-weight:700;font-size:13px;display:grid;place-items:center}
+.guide .mention{display:block;width:max-content;margin-top:8px;font-style:normal;font-weight:800;font-size:15px;letter-spacing:.02em;padding:5px 14px;border-radius:9px;color:#fff;background:linear-gradient(135deg,#8E6F2D,#E3CB8C 55%,#B08A3C);box-shadow:0 2px 8px rgba(80,60,0,.25)}
 .tiny{font-size:12px;color:var(--muted)}
 .chip{position:absolute;border:1px solid var(--gold);padding:5px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:rgba(253,251,247,.88);color:var(--fg);font-weight:600;animation:fadeUp .9s 1.9s both}
 .photo{background-size:cover;background-position:center;background-repeat:no-repeat}
@@ -516,6 +522,15 @@ body.cardmode .almawrap .eyebrow{text-align:center;margin-bottom:6px}
        <label class="field" for="friend"><span data-t="friendLbl">Your friend's Instagram handle</span>
          <input type="text" id="friend" placeholder="@friend" autocomplete="off" autocapitalize="none"></label>
        <div class="story"><img id="storyImg" alt="Your Instagram Story, with your photo, @sisonebeauty, your friend and #longevityskincare"></div>
+       <div class="guide"><div class="gh" data-t="guH">Before you post: tag us so we see it</div>
+         <ol>
+           <li><i>1</i><span data-t="g1h">Tap <b>Share to Story</b> and choose Instagram, then <b>Your Story</b>.</span></li>
+           <li><i>2</i><span data-t="g2h">In Instagram, tap the <b>sticker</b> icon at the top.</span></li>
+           <li><i>3</i><span><span data-t="g3h">Choose <b>@MENTION</b> and type <b>sisonebeauty</b>.</span><em class="mention">@sisonebeauty</em></span></li>
+           <li><i>4</i><span data-t="g4h">Make sure your account is <b>public</b>, then post.</span></li>
+         </ol>
+         <p class="tiny" data-t="guP">Without the mention sticker, @sisonebeauty is not notified.</p>
+         <button class="btn ghost" type="button" id="copyHandle" data-t="gCopy">Copy @sisonebeauty</button></div>
        <div class="two">
          <button class="btn gold" type="button" id="shareStory" data-t="shareBtn">Share to Story</button>
          <button class="btn ghost" type="button" id="saveStory" data-t="saveBtn">Save image</button>
@@ -525,7 +540,7 @@ body.cardmode .almawrap .eyebrow{text-align:center;margin-bottom:6px}
          <a class="btn ghost" href="https://www.instagram.com/sisonebeauty/" target="_blank" rel="noopener" data-t="igBtn">Open Instagram</a>
        </div>
        <p class="tiny" id="storyMsg" aria-live="polite" data-t="storyMsg">Choose Instagram, then Story. Add the @sisonebeauty mention sticker so we see it.</p>
-       <label class="check"><input type="checkbox" id="posted"><span data-t="posted">I posted my Story with the tags</span></label>
+       <label class="check"><input type="checkbox" id="posted"><span data-t="posted">I added the @sisonebeauty mention sticker and posted my Story</span></label>
      </div>
 
      <div class="step" data-step="4">
@@ -707,11 +722,12 @@ body.cardmode .almawrap .eyebrow{text-align:center;margin-bottom:6px}
     s1h:'Pick your <b>shade</b>',s1pay0:'Your BB Cream is part of the prize',s1fh:'Then follow <b>@sisonebeauty</b>',setName:'The complete collection',cat_all:'Seven full-size products',cat_pair:'Cleanse and exfoliate',s1pay:'Unlocks your 20% code',s1p:'Tap the button. Instagram opens on the SISÓNE profile. Follow, then swipe back to this page.',igBtn:'Open Instagram',follow:'I follow @sisonebeauty',followed:'I followed @sisonebeauty',
     s2h:'Snap your <b>glow</b>',s2pay:'Puts you in the draw',s2p:'Take a new photo or pick one from your library. You will post it in the next step.',pvEmpty:'Your photo appears here',cam:'Take a photo',lib:'Choose from library',
     s3h:'Share your <b>Story</b>',s3pay:'Share the glow',s3p:'We made your Story for you. @sisonebeauty, your friend and <span class="hashtag">#longevityskincare</span> are already on it.',friendLbl:"Your friend's Instagram handle",shareBtn:'Share to Story',saveBtn:'Save image',copyTags:'Copy tags',
-    storyMsg:'Choose Instagram, then Story. Add the @sisonebeauty mention sticker so we see it.',posted:'I posted my Story with the tags',
+    guH:'Before you post: tag us so we see it',g1h:'Tap <b>Share to Story</b> and choose Instagram, then <b>Your Story</b>.',g2h:'In Instagram, tap the <b>sticker</b> icon at the top.',g3h:'Choose <b>@MENTION</b> and type <b>sisonebeauty</b>.',g4h:'Make sure your account is <b>public</b>, then post.',guP:'Without the mention sticker, @sisonebeauty is not notified.',gCopy:'Copy @sisonebeauty',gCopied:'Copied @sisonebeauty. Paste it in the mention sticker.',
+    storyMsg:'Choose Instagram, then Story. Add the @sisonebeauty mention sticker so we see it.',posted:'I added the @sisonebeauty mention sticker and posted my Story',
     s4h:'Enter your email to <b>unlock your code</b>',s4pay:'Your code appears on the next screen',shadeLbl:'Your BB Cream shade',shLight:'Light',shMedium:'Medium',shDark:'Dark',emailLbl:'Email',
     consent:'I agree that SISÓNE may email me about the draw and, if I win, contact me about the prize.',
     back:'Back',next:'Next',get:'Get my code',pl:'Step {n} of 4 · {label}',lab1:'pick your shade, then follow',lab2:'nearly in the draw',lab3:'one Story to go',lab4:'last step, then your code',
-    e1a:'Tap Open Instagram first and follow @sisonebeauty.',e1b:'Follow @sisonebeauty, then tick the box.',e2:'Add your photo to continue.',e3a:"Add your friend's Instagram handle, like @friend.",e3b:'Post your Story, then tick the box.',
+    e1a:'Tap Open Instagram first and follow @sisonebeauty.',e1b:'Follow @sisonebeauty, then tick the box.',e2:'Add your photo to continue.',e3a:"Add your friend's Instagram handle, like @friend.",e3b:'Add the mention sticker, post your Story, then tick the box.',
     e4a:'Choose your BB Cream shade.',e4b:'Enter a valid email address.',e4c:'Please accept the terms so we can send your code.',eFail:'Something went wrong. Please try again.',eFile:'That file could not be read. Try another photo.',
     aEb:'Meet the founder',aTitle:'Founder and CEO · SISÓNE BEAUTY',aQ:'Questions about the collection, a collaboration or a conversation about skin? Let\'s talk.',aCall:'Call',aMail:'Email',aIg:'Instagram',aWeb:'Website',aBook:'Book a meeting',aSave:'Save contact',aSub:'Meeting request from the SISÓNE booth',
     foot:'Longevity skincare from Stockholm',pw:'Powered by '+'<span class="wm">AIscent <i>Co.</i></span>',
@@ -733,11 +749,12 @@ body.cardmode .almawrap .eyebrow{text-align:center;margin-bottom:6px}
     s1h:'Välj din <b>nyans</b>',s1pay0:'Din BB Cream ingår i vinsten',s1fh:'Följ sedan <b>@sisonebeauty</b>',setName:'Hela kollektionen',cat_all:'Sju fullstora produkter',cat_pair:'Rengör och exfoliera',s1pay:'Låser upp din 20%-kod',s1p:'Tryck på knappen. Instagram öppnas på SISÓNE:s profil. Följ och svep sedan tillbaka hit.',igBtn:'Öppna Instagram',follow:'Jag följer @sisonebeauty',followed:'Jag följde @sisonebeauty',
     s2h:'Visa ditt <b>glow</b>',s2pay:'Du är med i dragningen',s2p:'Ta ett nytt foto eller välj ett från ditt bibliotek. Du lägger upp det i nästa steg.',pvEmpty:'Ditt foto visas här',cam:'Ta ett foto',lib:'Välj från bibliotek',
     s3h:'Dela din <b>Story</b>',s3pay:'Dela glowen',s3p:'Vi har gjort din Story åt dig. @sisonebeauty, din vän och <span class="hashtag">#longevityskincare</span> ligger redan på den.',friendLbl:'Din väns Instagram-namn',shareBtn:'Dela till Story',saveBtn:'Spara bild',copyTags:'Kopiera taggar',
-    storyMsg:'Välj Instagram och sedan Story. Lägg till @sisonebeauty-klistermärket så att vi ser den.',posted:'Jag har lagt upp min Story med taggarna',
+    guH:'Innan du lägger upp: tagga oss så att vi ser den',g1h:'Tryck på <b>Dela till Story</b> och välj Instagram, sedan <b>Din Story</b>.',g2h:'Tryck på <b>klistermärkes</b>-ikonen högst upp i Instagram.',g3h:'Välj <b>@-klistermärket</b> (@omnämnande) och skriv <b>sisonebeauty</b>.',g4h:'Se till att ditt konto är <b>offentligt</b> och lägg sedan upp.',guP:'Utan omnämnande-klistermärket får @sisonebeauty ingen notis.',gCopy:'Kopiera @sisonebeauty',gCopied:'Kopierade @sisonebeauty. Klistra in det i omnämnande-klistermärket.',
+    storyMsg:'Välj Instagram och sedan Story. Lägg till @sisonebeauty-klistermärket så att vi ser den.',posted:'Jag la till @sisonebeauty-klistermärket och la upp min Story',
     s4h:'Ange din e-post för att <b>låsa upp din kod</b>',s4pay:'Din kod visas på nästa skärm',shadeLbl:'Din BB Cream-nyans',shLight:'Light',shMedium:'Medium',shDark:'Dark',emailLbl:'E-post',
     consent:'Jag godkänner att SISÓNE mejlar mig om dragningen och, om jag vinner, kontaktar mig om priset.',
     back:'Tillbaka',next:'Nästa',get:'Hämta min kod',pl:'Steg {n} av 4 · {label}',lab1:'välj nyans, följ sedan',lab2:'nästan med i dragningen',lab3:'en Story kvar',lab4:'sista steget, sedan din kod',
-    e1a:'Tryck på Öppna Instagram först och följ @sisonebeauty.',e1b:'Följ @sisonebeauty och kryssa sedan i rutan.',e2:'Lägg till ditt foto för att gå vidare.',e3a:'Lägg till din väns Instagram-namn, till exempel @vän.',e3b:'Lägg upp din Story och kryssa sedan i rutan.',
+    e1a:'Tryck på Öppna Instagram först och följ @sisonebeauty.',e1b:'Följ @sisonebeauty och kryssa sedan i rutan.',e2:'Lägg till ditt foto för att gå vidare.',e3a:'Lägg till din väns Instagram-namn, till exempel @vän.',e3b:'Lägg till omnämnande-klistermärket, lägg upp din Story och kryssa sedan i rutan.',
     e4a:'Välj nyans på din BB Cream.',e4b:'Ange en giltig e-postadress.',e4c:'Godkänn villkoren så att vi kan skicka din kod.',eFail:'Något gick fel. Försök igen.',eFile:'Filen gick inte att läsa. Prova ett annat foto.',
     aEb:'Möt grundaren',aTitle:'Grundare och VD · SISÓNE BEAUTY',aQ:'Frågor om kollektionen, ett samarbete eller bara prata hudvård? Hör av dig.',aCall:'Ring',aMail:'Mejla',aIg:'Instagram',aWeb:'Hemsida',aBook:'Boka möte',aSave:'Spara kontakt',aSub:'Mötesförfrågan från SISÓNE-montern',
     foot:'Longevity-hudvård från Stockholm',pw:'Skapat av '+'<span class="wm">AIscent <i>Co.</i></span>',
@@ -1071,6 +1088,11 @@ body.cardmode .almawrap .eyebrow{text-align:center;margin-bottom:6px}
         $('storyMsg').textContent=tr('storyMsg');
       },function(err){if(!err||err.name!=='AbortError')saveStory()});
     }else saveStory();
+  };
+  $('copyHandle').onclick=function(){
+    var t='@'+CONFIG.igHandle;
+    function ok(){$('storyMsg').textContent=tr('gCopied')}
+    try{navigator.clipboard.writeText(t).then(ok,ok)}catch(e){ok()}
   };
   $('copyCap').onclick=function(){
     var t=caption();
