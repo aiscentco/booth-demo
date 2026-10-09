@@ -158,7 +158,7 @@ button{font:inherit;color:inherit}
         b.className='badge show';
         $('prize').innerHTML='wins the <b>SISÓNE BEAUTY Longevity Collection</b>';
         later(function(){$('prize').className='prize show'},800);
-        if(res){$('info').textContent='BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row+' in the sheet  ·  '+res.total+' eligible entries';later(function(){$('info').className='prize show'},1400)}
+        if(res){$('info').textContent='BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row+' in the sheet';later(function(){$('info').className='prize show'},1400)}
         burst();later(burst,900);later(burst,1900);later(function(){drawing=false;$('go').disabled=false;if(live){shown=true;arm=false;$('go').textContent='Draw a reserve'}else $('go').textContent='Draw again'},3000);
         return;
       }
@@ -195,7 +195,7 @@ button{font:inherit;color:inherit}
     fetch(ENDPOINT+'?action=names&key='+encodeURIComponent(key)).then(function(r){return r.json()}).then(function(res){
       if(!res||!res.ok){setHint((res&&res.error)||'Something went wrong');key='';return}
       pool=res.names.length?res.names:['...'];$('keyrow').hidden=true;
-      setHint(res.total+' eligible entries. Ready to draw.');
+      setHint('');
     }).catch(function(){setHint('Could not reach the sheet. Check your connection.')});
   }
   if(live){
