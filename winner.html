@@ -19,7 +19,7 @@ button{font:inherit;color:inherit}
 @keyframes run{to{transform:translateX(-50%)}}
 @keyframes runr{from{transform:translateX(-50%)}to{transform:none}}
 @keyframes breathe{0%,100%{box-shadow:0 0 60px 8px rgba(255,236,190,.75),inset 0 0 60px 6px rgba(255,236,190,.55);transform:translate(-50%,-50%) scale(1)}50%{box-shadow:0 0 110px 22px rgba(255,236,190,.95),inset 0 0 90px 14px rgba(255,236,190,.7);transform:translate(-50%,-50%) scale(1.04)}}
-@keyframes floatm{0%,100%{transform:translate(0,0) rotate(var(--r,0deg))}50%{transform:translate(2vw,-3vh) rotate(calc(var(--r,0deg) + 8deg))}}
+@keyframes floatm{0%,100%{transform:translate(0,0) rotate(var(--r,0deg))}50%{transform:translate(2cqw,-3cqh) rotate(calc(var(--r,0deg) + 8deg))}}
 @keyframes draw{from{stroke-dashoffset:300}to{stroke-dashoffset:0}}
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes rise{from{transform:translateY(115%)}to{transform:none}}
@@ -32,17 +32,17 @@ button{font:inherit;color:inherit}
 
 /* moving light background */
 .bg{position:fixed;inset:0;overflow:hidden;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 46%,#fff 0%,rgba(255,255,255,0) 72%),linear-gradient(180deg,#F3EAD6 0%,#FBF7EC 50%,#F1E7CF 100%)}
-.rays{position:absolute;left:50%;top:46%;width:240vmax;height:240vmax;margin:-120vmax 0 0 -120vmax;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.85) 0 3deg,rgba(246,238,220,0) 3deg 11deg);animation:spin 120s linear infinite}
+.rays{position:absolute;left:50%;top:46%;width:240cqmax;height:240cqmax;margin:-120cqmax 0 0 -120cqmax;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.85) 0 3deg,rgba(246,238,220,0) 3deg 11deg);animation:spin 120s linear infinite}
 .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 50% 46%,rgba(255,255,255,.9),rgba(255,255,255,0) 70%)}
-.ringb{position:absolute;left:50%;top:46%;width:min(90vmin,900px);aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(188,148,66,.6);animation:breathe 8s ease-in-out infinite;z-index:1}
+.ringb{position:absolute;left:50%;top:46%;width:min(90cqmin,900px);aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(188,148,66,.6);animation:breathe 8s ease-in-out infinite;z-index:1}
 .floor{position:absolute;left:0;right:0;bottom:0;height:16%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.9) 60%,rgba(238,228,205,.9));z-index:1}
 .ghost{position:absolute;left:0;right:0;overflow:hidden;pointer-events:none;z-index:1}
 .ghost>div{display:flex;width:max-content}
-.ghost span{font-weight:200;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.3px rgba(176,138,60,.4);line-height:.85;white-space:nowrap;padding-right:.3em;font-size:clamp(120px,24vw,340px)}
+.ghost span{font-weight:200;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.3px rgba(176,138,60,.4);line-height:.85;white-space:nowrap;padding-right:.3em;font-size:clamp(120px,24cqw,340px)}
 .g1{top:8%}.g1>div{animation:run 70s linear infinite}
 .g2{bottom:8%}.g2>div{animation:runr 90s linear infinite}
 .g2 span{-webkit-text-stroke-color:rgba(176,138,60,.28)}
-.mol{position:absolute;width:clamp(120px,16vw,260px);opacity:.8;z-index:1;animation:floatm 18s ease-in-out infinite}
+.mol{position:absolute;width:clamp(120px,16cqw,260px);opacity:.8;z-index:1;animation:floatm 18s ease-in-out infinite}
 .mol svg{display:block;width:100%;overflow:visible}
 .mol path,.mol circle{fill:none;stroke:var(--gold);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;animation:draw 3.4s .5s ease both}
 .mol text{font-family:var(--font);font-size:9px;letter-spacing:.1em;fill:var(--gold);font-weight:600}
@@ -50,51 +50,90 @@ button{font:inherit;color:inherit}
 
 /* winner */
 @keyframes shine{to{background-position:200% 0}}
-.stage{position:fixed;inset:0;z-index:3;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:4vw;padding:10vh 7vw 12vh}
-.mark{font-weight:400;letter-spacing:.3em;font-size:15px;position:fixed;left:4vw;top:20px;z-index:5}
+.stage{position:fixed;inset:0;z-index:3;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:4cqw;padding:10cqh 7cqw 12cqh}
+.mark{font-weight:400;letter-spacing:.3em;font-size:15px;position:fixed;left:4cqw;top:20px;z-index:5}
 .mark small{display:block;letter-spacing:.22em;font-size:10px;color:var(--muted);margin-top:2px}
-.eyebrow{font-size:clamp(11px,1.2vw,16px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.col{min-width:0;display:grid;gap:2.2vh;justify-items:start;position:relative}
-.big{font-weight:200;text-transform:uppercase;font-size:clamp(36px,6.2vw,104px);line-height:.92;margin:0;letter-spacing:.02em}
+.eyebrow{font-size:clamp(11px,1.2cqw,16px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.col{min-width:0;display:grid;gap:2.2cqh;justify-items:start;position:relative}
+.big{font-weight:200;text-transform:uppercase;font-size:clamp(36px,6.2cqw,104px);line-height:.92;margin:0;letter-spacing:.02em}
 .big b{font-weight:800}
 .big .gold{display:block;background:linear-gradient(180deg,#EBCF86,#C39A45 55%,#9A7628);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;letter-spacing:.04em}
-.reel{font-weight:300;font-size:clamp(30px,5vw,84px);line-height:1.15;min-height:1.1em;color:var(--ink);letter-spacing:.01em;white-space:nowrap;max-width:100%}
+.reel{font-weight:300;font-size:clamp(30px,5cqw,84px);line-height:1.15;min-height:1.1em;color:var(--ink);letter-spacing:.01em;white-space:nowrap;max-width:100%}
 .reel.final{font-weight:600;background:linear-gradient(100deg,#9A7628,#EBCF86 40%,#B58E3A 60%,#8F6D25);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:pop .9s cubic-bezier(.2,1.4,.4,1),shine 5s linear infinite}
-.prize{font-size:clamp(15px,1.8vw,26px);color:var(--muted);max-width:30ch;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
+.prize{font-size:clamp(15px,1.8cqw,26px);color:var(--muted);max-width:30ch;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
 .prize.show{opacity:1;transform:none}
 .prize b{color:var(--ink);font-weight:600}
-.badge{width:clamp(90px,13vw,190px);aspect-ratio:1;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 0 8px rgba(255,255,255,.6),0 0 60px 10px rgba(255,236,190,.9);display:none;place-items:center;font-size:clamp(34px,5vw,76px);font-weight:200;color:#fff;background-size:cover;background-position:center}
+.badge{width:clamp(90px,13cqw,190px);aspect-ratio:1;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 0 8px rgba(255,255,255,.6),0 0 60px 10px rgba(255,236,190,.9);display:none;place-items:center;font-size:clamp(34px,5cqw,76px);font-weight:200;color:#fff;background-size:cover;background-position:center}
 .badge.show{display:grid;animation:pop .9s .1s both}
-.cta{display:inline-flex;align-items:center;gap:16px;padding:20px 34px;border:1px solid var(--ink);background:var(--ink);color:#F1DFB0;cursor:pointer;letter-spacing:.3em;text-transform:uppercase;font-size:13px;box-shadow:inset 0 0 0 4px var(--ink),inset 0 0 0 5px rgba(214,176,92,.85);margin-top:1vh}
+.cta{display:inline-flex;align-items:center;gap:16px;padding:20px 34px;border:1px solid var(--ink);background:var(--ink);color:#F1DFB0;cursor:pointer;letter-spacing:.3em;text-transform:uppercase;font-size:13px;box-shadow:inset 0 0 0 4px var(--ink),inset 0 0 0 5px rgba(214,176,92,.85);margin-top:1cqh}
 .cta:disabled{opacity:.5;cursor:default}
 .keyrow{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}.keyrow input{flex:1;min-width:180px;padding:16px 18px;border:1px solid var(--ink);background:rgba(255,255,255,.85);font:inherit;font-size:16px;letter-spacing:.1em}.keyrow .cta{padding:16px 24px}
-.prize#info{font-size:clamp(12px,1.2vw,16px);max-width:60ch;letter-spacing:.04em}
+.prize#info{font-size:clamp(12px,1.2cqw,16px);max-width:60ch;letter-spacing:.04em}
 .hint{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-.archp{justify-self:center;width:min(360px,34vw,50vh);aspect-ratio:512/688;border-radius:999px 999px 0 0;border:1px solid rgba(176,138,60,.75);border-bottom:0;background:var(--g) center/cover;box-shadow:0 0 0 6px rgba(255,255,255,.55),0 30px 60px rgba(120,90,20,.2);animation:pop 1.2s both}
-.chip{position:absolute;border:1px solid var(--gold);padding:5px 12px;font-size:clamp(9px,1vw,13px);letter-spacing:.2em;text-transform:uppercase;background:rgba(253,251,247,.9);font-weight:600}
+.archp{justify-self:center;width:min(360px,34cqw,50cqh);aspect-ratio:512/688;border-radius:999px 999px 0 0;border:1px solid rgba(176,138,60,.75);border-bottom:0;background:var(--g) center/cover;box-shadow:0 0 0 6px rgba(255,255,255,.55),0 30px 60px rgba(120,90,20,.2);animation:pop 1.2s both}
+.chip{position:absolute;border:1px solid var(--gold);padding:5px 12px;font-size:clamp(9px,1cqw,13px);letter-spacing:.2em;text-transform:uppercase;background:rgba(253,251,247,.9);font-weight:600}
 .visw{position:relative;display:grid;place-items:center}
 #conf{position:fixed;inset:0;width:100%;height:100%;z-index:6;pointer-events:none}
 .clean .ctl{display:none}
 .stage.go{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
 .stage.go .col{justify-items:center;width:min(1100px,100%);animation:pop .8s both}
 .stage.go .visw{display:none}
-.stage.go .reel{font-size:clamp(30px,6.4vw,104px)}
+.stage.go .reel{font-size:clamp(30px,6.4cqw,104px)}
 .stage.go .prize{max-width:36ch}
 .stage.go .eyebrow{letter-spacing:.42em}
-@media (max-width:820px){.stage{grid-template-columns:1fr;align-content:center;gap:3vh;padding:12vh 7vw 8vh;overflow-y:auto}.archp{width:min(44vw,28vh)}.visw{order:-1}}
+@media (max-width:820px){.stage{grid-template-columns:1fr;align-content:center;gap:3cqh;padding:12cqh 7cqw 8cqh;overflow-y:auto}.archp{width:min(44cqw,28cqh)}.visw{order:-1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+/* ---- Instagram Story frame (9:16). Everything public sits inside .frame; controls and Alma details sit below it ---- */
+body{--below:110px;--arn:.5625;--ar:9/16;background:#161412;display:flex;flex-direction:column;align-items:center;justify-content:center}
+body.details{--below:236px}
+.frame .bg,.frame .stage,.frame #conf,.frame .mark{position:absolute}
+body.fmt-post{--arn:.8;--ar:4/5}
+body.fmt-square{--arn:1;--ar:1/1}
+.frame{position:relative;flex:none;width:min(100vw,calc((100vh - var(--below)) * var(--arn)));aspect-ratio:var(--ar);container-type:size;overflow:hidden;background:#F6EEDC;box-shadow:0 0 0 1px rgba(214,176,92,.35),0 24px 70px rgba(0,0,0,.55)}
+.stage{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;align-content:center;justify-items:center;text-align:center;gap:3cqh;padding:14cqh 8cqw 17cqh;overflow:visible}
+.visw{order:-1}
+.archp{width:44cqw}
+.col{justify-items:center;width:100%;gap:2cqh}
+.stage.go .col{width:100%}
+.eyebrow{font-size:2.7cqw;letter-spacing:.3em}
+.stage.go .eyebrow{letter-spacing:.3em}
+.big{font-size:10.4cqw;line-height:.95}
+.reel{font-size:8.4cqw}
+.stage.go .reel{font-size:9.4cqw}
+.prize{font-size:4cqw;max-width:26ch}
+.stage.go .prize{max-width:26ch}
+.badge{width:30cqw;font-size:12cqw}
+.chip{font-size:2.3cqw;padding:.6cqw 2cqw}
+.mark{position:absolute;left:7cqw;top:5.5cqh;font-size:3.2cqw}
+.mark small{font-size:2cqw}
+.ghost span{font-size:30cqw}
+.mol{width:26cqw}
+.below{width:min(94vw,520px);min-height:var(--below);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:14px 0}
+.below .ctl{width:100%;display:grid;justify-items:center}
+.below .keyrow{width:100%}
+.below .cta{margin-top:0}
+.below .hint{color:#CDBF9D}
+.alma{width:100%;border:1px solid rgba(214,176,92,.6);background:#1F1B17;color:#F7F1E3;padding:14px 18px;font-size:14px}
+.alma .ak{letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:#D9BE7E;font-weight:600;margin-bottom:8px}
+.alma .ar{color:#CDBF9D}
+.alma dl{display:grid;grid-template-columns:auto 1fr;gap:5px 16px;margin:0}
+.alma dt{color:#D9BE7E;font-size:12px;letter-spacing:.08em;text-transform:uppercase;align-self:center}
+.alma dd{margin:0;font-weight:600;word-break:break-all;user-select:all}
+.clean .below{display:none}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="nfc" viewBox="0 0 24 24"><path d="M6 8.5a6 6 0 0 1 0 7M10 6a10 10 0 0 1 0 12M14 3.5a14 14 0 0 1 0 17" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></symbol></defs></svg>
 <template id="molT"><svg viewBox="0 0 140 110" aria-hidden="true"><path pathLength="300" d="M70 8 L88 18 L88 38 L70 48 L52 38 L52 18 Z"/><path pathLength="300" d="M52 18 L52 38 L36 44 L28 28 L40 14 Z"/><path pathLength="300" d="M70 48 L76 66"/><path pathLength="300" d="M76 66 L96 62 L104 78 L90 90 L72 82 Z"/><path pathLength="300" d="M88 18 L104 10"/><path pathLength="300" d="M104 78 L120 84"/><text x="106" y="9">NAD⁺</text></svg></template>
 
+<div class="frame" id="frame">
 <div class="bg" aria-hidden="true">
   <div class="rays"></div><div class="ringb"></div><div class="floor"></div>
   <div class="ghost g1"><div><span>Longevity</span><span>Longevity</span><span>Longevity</span><span>Longevity</span></div></div>
   <div class="ghost g2"><div><span>NAD⁺ NMN</span><span>NAD⁺ NMN</span><span>NAD⁺ NMN</span><span>NAD⁺ NMN</span></div></div>
-  <div class="mol" style="left:4vw;top:22vh;--r:-8deg"></div>
-  <div class="mol" style="right:6vw;top:56vh;--r:14deg;animation-delay:-6s"></div>
-  <div class="mol" style="left:38vw;top:70vh;--r:-20deg;width:clamp(90px,11vw,180px);animation-delay:-11s"></div>
+  <div class="mol" style="left:4cqw;top:22cqh;--r:-8deg"></div>
+  <div class="mol" style="right:6cqw;top:56cqh;--r:14deg;animation-delay:-6s"></div>
+  <div class="mol" style="left:38cqw;top:70cqh;--r:-20deg;width:clamp(90px,11cqw,180px);animation-delay:-11s"></div>
   <canvas id="dust"></canvas>
 </div>
 <div class="mark">SISÓNE<small>BOOTH COMPETITION</small></div>
@@ -105,15 +144,27 @@ button{font:inherit;color:inherit}
     <h1 class="big" id="idle"><span class="gold">Win</span>the <b>SISÓNE</b> Beauty<br>Longevity Collection</h1>
     <div class="reel" id="reel" hidden></div>
     <div class="prize" id="prize"></div>
-    <div class="prize" id="info"></div>
-    <div class="ctl"><div id="keyrow" class="keyrow" hidden><input id="key" type="password" placeholder="Draw key" autocomplete="off" autocapitalize="none" spellcheck="false"><button class="cta" id="unlock" type="button">Unlock</button></div>
-      <button class="cta" id="go" type="button">Draw the winner</button><div class="hint" id="hint" style="margin-top:12px"></div></div>
   </div>
   <div class="visw"><div class="archp" role="img" aria-label="The SISÓNE Longevity Collection"></div>
     <span class="chip" style="left:-4%;top:14%">NAD⁺</span><span class="chip" style="right:-2%;top:30%">NMN</span><span class="chip" style="left:-6%;bottom:22%">24K Gold</span>
   </div>
 </div>
 <canvas id="conf"></canvas>
+</div>
+<div class="below">
+    <div class="ctl"><div id="keyrow" class="keyrow" hidden><input id="key" type="password" placeholder="Draw key" autocomplete="off" autocapitalize="none" spellcheck="false"><button class="cta" id="unlock" type="button">Unlock</button></div>
+      <button class="cta" id="go" type="button">Draw the winner</button><div class="hint" id="hint" style="margin-top:12px"></div></div>
+  <div class="alma" id="alma" hidden>
+    <div class="ak">For Alma only</div>
+    <div class="ar" id="aEmpty">Winner details appear here after the draw.</div>
+    <dl id="aList" hidden>
+      <dt>Winner</dt><dd id="aWin"></dd>
+      <dt>BB Cream shade</dt><dd id="aShade"></dd>
+      <dt>Row in the sheet</dt><dd id="aRow"></dd>
+      <dt>Drawn</dt><dd id="aWhen"></dd>
+    </dl>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -123,6 +174,7 @@ button{font:inherit;color:inherit}
   [].forEach.call(document.querySelectorAll('.mol'),function(m){m.innerHTML=molT});
   var qs=new URLSearchParams(location.search);
   if(qs.get('clean'))document.body.classList.add('clean');
+  var fmt=qs.get('format');if(fmt==='post'||fmt==='square')document.body.classList.add('fmt-'+fmt);
   /* ?entries=@a,@b,@c replaces the example pool. ?winner=@name shows a fixed winner. */
   var pool=(qs.get('entries')||'@amanda.nyberg,@lisa_in_sthlm,@moa.lindqvist,@sofiaglow,@elin.skincare,@hanna.beauty,@julia.ekstrom,@klara.k').split(',').map(function(s){s=s.trim();return s.charAt(0)==='@'?s:'@'+s}).filter(function(s){return s.length>1});
   var ENDPOINT='https://script.google.com/macros/s/AKfycbyGn312G-wwUPZ1dgzS4TQMI5RB1j5OZRI7EXugXyo6lLgVur488ppvA7hoTDTlV8k/exec';
@@ -131,6 +183,21 @@ button{font:inherit;color:inherit}
   var shown=false,arm=false,reserve=false;
   /* public view shows only the winner. &details=1 adds shade and row for Alma. &reserve=1 enables a reserve draw. */
   var DETAILS=!!qs.get('details'),RESERVE=!!qs.get('reserve');
+  if(DETAILS){document.body.classList.add('details');$('alma').hidden=false}
+  function fillDetails(res){
+    if(!DETAILS||!res)return;
+    $('aEmpty').hidden=true;$('aList').hidden=false;
+    $('aWin').textContent=res.winner;$('aShade').textContent=res.shade||'n/a';
+    $('aRow').textContent=res.row+(res.label&&res.label!=='WINNER'?'  ('+res.label+')':'');
+    $('aWhen').textContent=new Date(res.when).toLocaleString();
+  }
+  /* the public screen never shows a full email: ab***@gmail.com. Alma sees the full address with &details=1 */
+  function disp(w){
+    var i=String(w).indexOf('@');
+    if(i<1||w.indexOf('***')>-1)return w;
+    var u=w.slice(0,i);
+    return (u.length>2?u.slice(0,2):u.slice(0,1))+'***'+w.slice(i);
+  }
   function setHint(t){$('hint').textContent=t}
   var fixed=qs.get('winner');if(fixed&&fixed.charAt(0)!=='@')fixed='@'+fixed;
   var drawing=false,timers=[];
@@ -152,7 +219,7 @@ button{font:inherit;color:inherit}
     var delay=60,el=0,total=reduce?600:4600;
     (function tick(){
       if(el>total){
-        $('reel').textContent=winner;$('reel').className='reel final';fit();
+        $('reel').textContent=disp(winner);$('reel').className='reel final';fit();
         $('eb').textContent=(res&&res.label&&res.label!=='WINNER')?('Reserve winner'):'And the winner is';
         var b=$('badge'),hue=Math.floor(Math.random()*360);
         b.textContent=winner.charAt(winner.charAt(0)==='@'?1:0).toUpperCase();
@@ -160,7 +227,7 @@ button{font:inherit;color:inherit}
         b.className='badge show';
         $('prize').innerHTML='wins the <b>SISÓNE BEAUTY Longevity Collection</b>';
         later(function(){$('prize').className='prize show'},800);
-        if(res&&DETAILS){$('info').textContent='BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row+' in the sheet';later(function(){$('info').className='prize show'},1400)}
+        if(res)fillDetails(res);
         burst();later(burst,900);later(burst,1900);later(function(){drawing=false;$('go').disabled=false;if(live){shown=true;arm=false;if(RESERVE){$('go').textContent='Draw a reserve'}else{$('go').style.display='none'}}else $('go').textContent='Draw again'},3000);
         return;
       }
@@ -170,19 +237,18 @@ button{font:inherit;color:inherit}
   }
   function showExisting(res){
     $('stage').classList.add('go');$('idle').hidden=true;$('reel').hidden=false;
-    $('reel').textContent=res.winner;$('reel').className='reel final';fit();
+    $('reel').textContent=disp(res.winner);$('reel').className='reel final';fit();
     $('eb').textContent=DETAILS?'Winner already drawn':'And the winner is';
     var b=$('badge');b.textContent=res.winner.charAt(res.winner.charAt(0)==='@'?1:0).toUpperCase();b.className='badge show';
     $('prize').innerHTML='wins the <b>SISÓNE BEAUTY Longevity Collection</b>';$('prize').className='prize show';
-    if(DETAILS)$('info').textContent='Drawn '+new Date(res.when).toLocaleString()+'  ·  '+res.label+'  ·  BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row;
-    if(DETAILS)$('info').className='prize show';
+    fillDetails(res);
     shown=true;arm=false;$('go').disabled=false;$('go').textContent='Draw a reserve';
     if(!RESERVE)$('go').style.display='none';
   }
   function draw(){
     if(drawing)return;
     if(live&&shown&&!RESERVE)return;
-    if(!live){spin(fixed||pool[Math.floor(Math.random()*pool.length)]);return}
+    if(!live){var dw=fixed||pool[Math.floor(Math.random()*pool.length)];spin(dw,{label:'WINNER',winner:dw,shade:'Medium',row:7,when:new Date().toISOString()});return}
     if(!key){setHint('Enter the draw key first');return}
     if(shown&&!arm){arm=true;$('go').textContent='Click again to confirm a reserve draw';return}
     var wantReserve=shown&&arm;
@@ -217,7 +283,8 @@ button{font:inherit;color:inherit}
   });
   /* gold dust + confetti */
   var d=$('dust'),dx=d.getContext('2d'),cf=$('conf'),cx=cf.getContext('2d'),ps=[],bits=[];
-  function size(){[d,cf].forEach(function(c){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio})}
+  var fr=$('frame');
+  function size(){[d,cf].forEach(function(c){c.width=fr.clientWidth*devicePixelRatio;c.height=fr.clientHeight*devicePixelRatio})}
   size();addEventListener('resize',size);
   for(var k=0;k<70;k++)ps.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.5,s:Math.random()*.0004+.00008,p:Math.random()*6.28});
   function burst(){
