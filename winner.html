@@ -129,6 +129,8 @@ button{font:inherit;color:inherit}
   var live=!!ENDPOINT&&!qs.get('demo');
   var key=qs.get('key')||'';
   var shown=false,arm=false,reserve=false;
+  /* public view shows only the winner. &details=1 adds shade and row for Alma. &reserve=1 enables a reserve draw. */
+  var DETAILS=!!qs.get('details'),RESERVE=!!qs.get('reserve');
   function setHint(t){$('hint').textContent=t}
   var fixed=qs.get('winner');if(fixed&&fixed.charAt(0)!=='@')fixed='@'+fixed;
   var drawing=false,timers=[];
@@ -158,8 +160,8 @@ button{font:inherit;color:inherit}
         b.className='badge show';
         $('prize').innerHTML='wins the <b>SISÓNE BEAUTY Longevity Collection</b>';
         later(function(){$('prize').className='prize show'},800);
-        if(res){$('info').textContent='BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row+' in the sheet';later(function(){$('info').className='prize show'},1400)}
-        burst();later(burst,900);later(burst,1900);later(function(){drawing=false;$('go').disabled=false;if(live){shown=true;arm=false;$('go').textContent='Draw a reserve'}else $('go').textContent='Draw again'},3000);
+        if(res&&DETAILS){$('info').textContent='BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row+' in the sheet';later(function(){$('info').className='prize show'},1400)}
+        burst();later(burst,900);later(burst,1900);later(function(){drawing=false;$('go').disabled=false;if(live){shown=true;arm=false;if(RESERVE){$('go').textContent='Draw a reserve'}else{$('go').style.display='none'}}else $('go').textContent='Draw again'},3000);
         return;
       }
       $('reel').textContent=pool[Math.floor(Math.random()*pool.length)];
@@ -169,14 +171,17 @@ button{font:inherit;color:inherit}
   function showExisting(res){
     $('stage').classList.add('go');$('idle').hidden=true;$('reel').hidden=false;
     $('reel').textContent=res.winner;$('reel').className='reel final';fit();
-    $('eb').textContent='Winner already drawn';
-    var b=$('badge');b.textContent=res.winner.charAt(0).toUpperCase();b.className='badge show';
+    $('eb').textContent=DETAILS?'Winner already drawn':'And the winner is';
+    var b=$('badge');b.textContent=res.winner.charAt(res.winner.charAt(0)==='@'?1:0).toUpperCase();b.className='badge show';
     $('prize').innerHTML='wins the <b>SISÓNE BEAUTY Longevity Collection</b>';$('prize').className='prize show';
-    $('info').textContent='Drawn '+new Date(res.when).toLocaleString()+'  ·  '+res.label+'  ·  BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row;$('info').className='prize show';
+    if(DETAILS)$('info').textContent='Drawn '+new Date(res.when).toLocaleString()+'  ·  '+res.label+'  ·  BB Cream shade: '+(res.shade||'n/a')+'  ·  Entry row '+res.row;
+    if(DETAILS)$('info').className='prize show';
     shown=true;arm=false;$('go').disabled=false;$('go').textContent='Draw a reserve';
+    if(!RESERVE)$('go').style.display='none';
   }
   function draw(){
     if(drawing)return;
+    if(live&&shown&&!RESERVE)return;
     if(!live){spin(fixed||pool[Math.floor(Math.random()*pool.length)]);return}
     if(!key){setHint('Enter the draw key first');return}
     if(shown&&!arm){arm=true;$('go').textContent='Click again to confirm a reserve draw';return}
